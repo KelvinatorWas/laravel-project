@@ -4,8 +4,8 @@
     Back</a>
 
   <div class="mx-4">
-    <div class="flex items-center justify-center rounded border border-gray-200 bg-gray-50 p-10">
-      <div class="flex flex-col text-center">
+    <x-card class="p-10">
+      <div class="flex flex-col items-center text-center">
         <img class="mb-6 mr-6 w-48" src="{{ asset('images/no-image.png') }}" alt="" />
 
         <h3 class="mb-2 text-2xl">{{ $listing->title }}r</h3>
@@ -14,13 +14,7 @@
           {{ $listing->company }}
         </div>
 
-        <ul class="flex">
-          @foreach (explode(', ', $listing->tags) as $tag)
-            <li class="mr-2 flex items-center justify-center rounded-xl bg-black px-4 py-1 text-sm text-white">
-              <a href="#">{{ $tag }}</a>
-            </li>
-          @endforeach
-        </ul>
+        <x-job-tags :tags="$listing->tags"/>
 
         <div class="my-4 w-full border-b-4 border-gray-200 pb-4 text-lg"><i class="fa-sharp fa-solid fa-location-dot"></i>
           {{ $listing->location }}</div>
@@ -50,5 +44,5 @@
         </div>
       </div>
     </div>
-  </div>
+  </x-card>
 @endsection

@@ -16,7 +16,7 @@
 
   {{-- View ;) im talking about you --}}
   <main>
-    @yield('content')
+    {{$slot}}
   </main>
 
   <footer class="static bottom-0 left-0 w-full flex items-center font-bold bg-red-600 text-white h-24 mt-24 justify-center">

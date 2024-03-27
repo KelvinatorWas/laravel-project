@@ -1,7 +1,9 @@
-@extends('layout')
-@section('content')
-  <a href="/" class="mb-4 ml-4 inline-block text-xl font-bold text-black"><i class="fa-solid fa-arrow-left"></i>
-    Back</a>
+<x-layout>
+
+  <a href="/" class="mb-4 ml-4 inline-block text-xl font-bold text-black">
+    <i class="fa-solid fa-arrow-left"></i>
+    Back
+  </a>
 
   <div class="mx-4">
     <x-card class="p-10">
@@ -45,4 +47,4 @@
       </div>
     </div>
   </x-card>
-@endsection
+</x-layout>

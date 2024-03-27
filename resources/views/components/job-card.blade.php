@@ -15,7 +15,7 @@
         {{ $listing->company }}
       </div>
 
-      <p class="mb-2">{{ $listing->description }}</p>
+      <p class="mb-2 hidden md:block">{{ $listing->description }}</p>
 
       <x-job-tags :tags="$listing->tags"/>
     

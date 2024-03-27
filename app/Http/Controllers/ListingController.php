@@ -10,7 +10,7 @@ class ListingController extends Controller
     public function showAllListings() {
 
         return view('listings.show-all', [
-            'listings' => Listing::latest()->filter(request(['tag']))->get(),
+            'listings' => Listing::latest()->filter(request(['tag', 'search']))->get(),
         ]);
     }
 

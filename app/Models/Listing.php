@@ -15,5 +15,12 @@ class Listing extends Model
             $requestTag = request('tag');
             $query->where('tags', 'like', "%{$requestTag}%");
         }
+
+        if ($filters['search'] ?? false) {    
+            $requestSearch = request('search');
+            $query->where('title', 'like', "%{$requestSearch}%")
+                ->orWhere('description', 'like', "%{$requestSearch}%")
+                ->orWhere('tags', 'like', "%{$requestSearch}%");
+        }
     }
 }

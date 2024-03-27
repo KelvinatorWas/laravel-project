@@ -7,14 +7,13 @@ use App\Models\Listing;
 // Returns all listings
 Route::get('/', function () {
     return view('listings', [
-        'heading' => 'Latest Listings',
+        'heading' => 'Latest Jobs',
         'listings' => Listing::all(),
     ]);
 });
 
-Route::get('/listings/{id}', function ($id) {
+Route::get('/listings/{listing}', function (Listing $listing) {
     return view('listing', [
-        'heading' => 'Only One Listing',
-        'listing' => Listing::find($id),
+        'listing' => $listing,
     ]);
 });

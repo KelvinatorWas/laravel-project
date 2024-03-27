@@ -5,8 +5,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Models\Listing;
 
-// Returns all listings
-Route::get('/', [ListingController::class, 'showAllListings']);
 
-// Returns all listings
+Route::get('/', [ListingController::class, 'showAllListings']);
 Route::get('/listings/{listing}', [ListingController::class, 'showOneListing']);

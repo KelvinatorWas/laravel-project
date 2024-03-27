@@ -9,7 +9,7 @@
   <title class>Jobify</title>
 </head>
 <body>
-  <nav class="flex w-full items-center justify-between font-bold bg-red-600 text-white h-24 mb-24">
+  <nav class="flex w-full items-center justify-between font-bold bg-red-600 text-white h-24 mb-5">
     {{-- navigation --}}
     <h1 class="text-3xl mb-5">Jobify</h1>
   </nav>

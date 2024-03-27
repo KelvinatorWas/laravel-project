@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Listing extends Model
 {
     use HasFactory;
+
+    public function scopeFilter($query, array $filters)
+    {
+        if ($filters['tag'] ?? true) return;
+
+        $requestTag = request('tag');
+        $query->where('tags', 'like', "%{$requestTag}%");
+    }
 }

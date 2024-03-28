@@ -6,5 +6,9 @@ use Illuminate\Support\Facades\Route;
 use App\Models\Listing;
 
 
-Route::get('/', [ListingController::class, 'showAllListings']);
-Route::get('/listings/{listing}', [ListingController::class, 'showOneListing']);
+Route::get('/', [ListingController::class, 'showAll']);
+Route::get('/listings/create', [ListingController::class, 'create']);
+Route::get('/listings/{listing}/edit', [ListingController::class, 'edit']);
+Route::post('/listings', [ListingController::class, 'store']);
+Route::get('/listings/{listing}', [ListingController::class, 'showOne']);
+

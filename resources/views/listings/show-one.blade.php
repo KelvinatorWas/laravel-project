@@ -8,7 +8,8 @@
   <div class="mx-4">
     <x-card class="p-10">
       <div class="flex flex-col items-center text-center">
-        <img class="mb-6 mr-6 w-48" src="{{ $listing->logo ? asset("storage/{$listing->logo}") : asset("/images/no-image.png") }}" alt="" />
+        <img class="mb-6 mr-6 w-48"
+          src="{{ $listing->logo ? asset("storage/{$listing->logo}") : asset('/images/no-image.png') }}" alt="" />
 
         <h3 class="mb-2 text-2xl">{{ $listing->title }}r</h3>
         <div class="mb-4 text-xl font-bold">
@@ -16,9 +17,10 @@
           {{ $listing->company }}
         </div>
 
-        <x-job-tags :tags="$listing->tags"/>
+        <x-job-tags :tags="$listing->tags" />
 
-        <div class="my-4 w-full border-b-4 border-gray-200 pb-4 text-lg"><i class="fa-sharp fa-solid fa-location-dot"></i>
+        <div class="my-4 w-full border-b-4 border-gray-200 pb-4 text-lg"><i
+            class="fa-sharp fa-solid fa-location-dot"></i>
           {{ $listing->location }}</div>
         <div>
           <h3 class="mb-4 text-3xl font-bold">
@@ -45,23 +47,15 @@
           </div>
         </div>
       </div>
-    </div>
+  </div>
   </x-card>
-  
-  <x-card class="m-4 p-3 flex gap-4 w-fit">
-    <a href="/listings/{{$listing->id}}/edit" class="px-4 py-2 text-white font-bold bg-red-600 rounded-md">
-      <i class="fa-solid fa-pen-to-square"></i>
-      Edit
-    </a>
 
-    <form action="/listings/{{$listing->id}}" method="POST">
-      @csrf
-      @method("DELETE")
-      <button class="px-4 py-2 text-white font-bold bg-red-500 rounded-md">
-        <i class="fa-solid fa-trash"></i>
-        Delete
-      </button>
-    </form>
-
+  @if (auth()->user()->id === $listing->user_id)
+    <x-card class="m-4 flex w-fit gap-4 p-3">
+      <a href="/listings/{{ $listing->id }}/edit" class="rounded-md bg-red-600 px-4 py-2 font-bold text-white">
+        <i class="fa-solid fa-pen-to-square"></i>
+        Edit
+      </a>
+  @endif
   </x-card>
 </x-layout>

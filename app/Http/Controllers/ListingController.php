@@ -8,6 +8,11 @@ use Illuminate\Validation\Rule;
 
 class ListingController extends Controller
 {
+
+    private function isAuthorized(int $user_id) {
+        if (auth()->user()->id != $user_id) return abort(403, "Unauthorized Action");
+    }
+
     public function showAll() {
 
         return view('listings.show-all', [
@@ -26,6 +31,8 @@ class ListingController extends Controller
     }
 
     public function edit(Listing $listing) {
+        if (auth()->user()->id !== $listing->user_id) return redirect("error");
+
         return view('listings.edit', [
             'listing' => $listing
         ]);
@@ -56,6 +63,8 @@ class ListingController extends Controller
     }
 
     public function update(Request $request, Listing $listing) {
+        $this->isAuthorized($listing->user_id);
+
         $formFields = $request->validate(
             [
                 'company' => 'required',
@@ -78,9 +87,16 @@ class ListingController extends Controller
     }
 
     public function delete(Listing $listing) {
-        $listing->delete();
+        $this->isAuthorized($listing->user_id);
 
+        $listing->delete();
         return redirect('/')->with('success', "Listing deleted!");
+    }
+
+    public function manage() {
+        return view('listings.manage', [
+            "listings" => auth()->user()->listings
+        ]);
     }
 
 }

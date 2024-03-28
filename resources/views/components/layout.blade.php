@@ -13,9 +13,44 @@
 
 <body>
   <x-toast />
-  <nav class="mb-5 flex h-24 w-full items-center justify-between bg-red-600 font-bold text-white">
+  <nav class="mb-5 flex items-center h-24 w-full justify-between bg-red-600 font-bold text-white">
     {{-- navigation --}}
-    <h1 class="mb-5 text-3xl">Jobify</h1>
+    <a href="/">
+      <h1 class="ml-6 text-3xl">Jobify</h1>
+    </a>
+
+    <div class="flex items-center p-4 gap-2">
+      @auth
+        <p class="px-4 py-2 hidden text-white font-bold md:block">
+          Hello {{auth()->user()->name}}!
+        </p>
+
+        <a href="/listings/manage" class="px-4 py-2 bg-gray-900 rounded-md text-white font-bold hover:bg-gray-800">
+          <i class="fa-solid fa-gear"></i>
+          Manage Listings
+        </a>
+
+        <form method="POST" action="/logout">
+          @csrf
+          <button class="bg-gray-900 py-2 px-4 rounded-md transition-all hover:text-red-600 hover:bg-gray-800"">
+            <i class="fa-solid fa-user-minus mr-1"></i>
+            Logout
+          </button>
+        </form>
+      
+      @else
+        <a href="/register" class="px-4 py-2 text-white font-bold hover:opacity-80">
+          <i class="fa-solid fa-user-plus"></i>
+          Register
+        </a>
+        
+        <a href="/login" class="px-4 py-2 text-white font-bold hover:opacity-80">
+          <i class="fa-solid fa-user"></i>
+          Login
+        </a>
+      @endauth
+
+    </div>
   </nav>
 
   {{-- View ;) im talking about you --}}

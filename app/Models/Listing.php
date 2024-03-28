@@ -18,6 +18,7 @@ class Listing extends Model
         'tags',
         'description',
         'logo',
+        'user_id',
     ];
 
 
@@ -33,5 +34,9 @@ class Listing extends Model
                 ->orWhere('description', 'like', "%{$requestSearch}%")
                 ->orWhere('tags', 'like', "%{$requestSearch}%");
         }
+    }
+
+    public function user() {
+        return $this->belongsTo(User::class, 'user_id');
     }
 }

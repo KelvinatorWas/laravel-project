@@ -8,7 +8,7 @@
   <div class="mx-4">
     <x-card class="p-10">
       <div class="flex flex-col items-center text-center">
-        <img class="mb-6 mr-6 w-48" src="{{ asset('images/no-image.png') }}" alt="" />
+        <img class="mb-6 mr-6 w-48" src="{{ $listing->logo ? asset("storage/{$listing->logo}") : asset("/images/no-image.png") }}" alt="" />
 
         <h3 class="mb-2 text-2xl">{{ $listing->title }}r</h3>
         <div class="mb-4 text-xl font-bold">
@@ -46,5 +46,12 @@
         </div>
       </div>
     </div>
+  </x-card>
+  
+  <x-card class="m-4 p-3 flex gap-4 w-fit">
+    <a href="/listings/{{$listing->id}}/edit" class="px-4 py-2 text-white font-bold bg-red-600 rounded-md">
+      <i class="fa-solid fa-pen-to-square"></i>
+      Edit
+    </a>
   </x-card>
 </x-layout>

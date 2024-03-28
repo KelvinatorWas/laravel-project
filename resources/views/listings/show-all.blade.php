@@ -8,5 +8,10 @@
     @else
       <p>No listings found!</p>
     @endunless
+
+    <div class="mt-6 p-4">
+      {{$listings->links()}}
+    </div>
+
   </div>
 </x-layout>

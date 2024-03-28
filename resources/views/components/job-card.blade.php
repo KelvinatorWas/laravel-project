@@ -2,7 +2,7 @@
 
 <x-card> 
   <div class="flex">
-    <img src="{{ asset('images/no-image.png') }}" alt="" class="mr-6 hidden h-48 w-48 self-center md:block" />
+    <img src="{{ $listing->logo ? asset("storage/{$listing->logo}") : asset("/images/no-image.png")  }}" alt="" class="mr-6 hidden h-48 w-48 self-center md:block" />
     <div class="flex flex-col justify-center">
       <h2 class="text-2xl hover:underline">
         <a href="/listings/{{ $listing->id }}">
@@ -15,7 +15,7 @@
         {{ $listing->company }}
       </div>
 
-      <p class="mb-2 hidden md:block">{{ $listing->description }}</p>
+      <p class="mb-2 hidden md:block">{{ limitCharacterCount($listing->description, 255) }}</p>
 
       <x-job-tags :tags="$listing->tags"/>
     

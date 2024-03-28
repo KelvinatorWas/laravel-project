@@ -1,7 +1,7 @@
 @props(['listing'])
 
 <x-card> 
-  <div class="flex">
+  <div class="flex justify-center md:justify-start">
     <img src="{{ $listing->logo ? asset("storage/{$listing->logo}") : asset("/images/no-image.png")  }}" alt="" class="mr-6 hidden h-48 w-48 self-center md:block" />
     <div class="flex flex-col justify-center">
       <h2 class="text-2xl hover:underline">

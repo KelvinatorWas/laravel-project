@@ -53,5 +53,15 @@
       <i class="fa-solid fa-pen-to-square"></i>
       Edit
     </a>
+
+    <form action="/listings/{{$listing->id}}" method="POST">
+      @csrf
+      @method("DELETE")
+      <button class="px-4 py-2 text-white font-bold bg-red-500 rounded-md">
+        <i class="fa-solid fa-trash"></i>
+        Delete
+      </button>
+    </form>
+
   </x-card>
 </x-layout>

@@ -5,3 +5,18 @@
 .text-shadow {
   text-shadow: 0 0 1px black;
 }
+
+@keyframes rotate {
+  from {
+      transform: rotate(0deg);
+  }
+  to { 
+      transform: rotate(360deg);
+  }
+}
+
+.x-rotate {
+  animation-name: rotate;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}

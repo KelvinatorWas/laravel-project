@@ -25,8 +25,8 @@
           Hello {{auth()->user()->name}}!
         </p>
 
-        <a href="/listings/manage" class="px-4 py-2 bg-gray-900 rounded-md text-white font-bold hover:bg-gray-800">
-          <i class="fa-solid fa-gear"></i>
+        <a href="/listings/manage" class="px-4 py-2 bg-gray-900 rounded-md text-white font-bold hover:text-red-600 hover:bg-gray-800">
+          <i class="fa-solid fa-gear x-rotate"></i>
           Manage Listings
         </a>
 

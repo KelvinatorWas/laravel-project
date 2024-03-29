@@ -11,7 +11,7 @@
   <title class>Jobify</title>
 </head>
 
-<body>
+<body class="h-screen">
   <x-toast />
   <nav class="mb-5 flex items-center h-24 w-full justify-between bg-red-600 font-bold text-white">
     {{-- navigation --}}
@@ -53,7 +53,6 @@
     </div>
   </nav>
 
-  {{-- View ;) im talking about you --}}
   <main class="min-h-full">
     {{ $slot }}
   </main>

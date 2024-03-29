@@ -15,12 +15,12 @@
         <div class="flex items-center gap-2 text-red-600">
           <i class="fa-solid fa-envelope text-xl"></i>
           <input value="{{ old('email') }}" type="email" name="email" placeholder="Email..."
-            class="w-full rounded-br-xl rounded-tl-xl border-2 border-red-600 p-2 outline-none transition-all focus:rounded-none focus:rounded-bl-xl focus:rounded-tr-xl focus:shadow-md focus:shadow-red-300" />
+            class="w-full rounded-br-xl rounded-tl-xl border-2 border-red-600 p-2 outline-none transition-all focus:rounded-none focus:rounded-bl-xl focus:rounded-tr-xl focus:shadow-md focus:shadow-red-300 " />
         </div>
-
         @error('email')
-          <p class="mt-1 text-xs text-red-500">{{ $message }}</p>
+          <p class="mt-1 text-xs text-red-500">{{$message}}</p>
         @enderror
+
       </div>
 
       <div class="mb-6">
@@ -36,8 +36,10 @@
       </div>
       
       <div class="self-center">
-        <button class="text-white font-bold bg-gray-900 py-2 px-6 rounded-md hover:opacity-80">Login</button>
+        <button class="text-white font-bold bg-gray-900 py-2 px-6 rounded-md transition-all duration-500 hover:bg-gray-800 hover:shadow hover:shadow-red-600">Login</button>
       </div>
+
+      <x-button label="Hello" type="primary"/>
 
       <a class="self-center mt-5 text-red-600 text-sm underline" href="/register">Don't have an account?</a>
 

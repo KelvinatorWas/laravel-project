@@ -50,7 +50,8 @@
   </div>
   </x-card>
 
-  @if (auth()->user()->id === $listing->user_id)
+  {{-- @if () --}}
+  @if (isValidUser($listing))
     <x-card class="m-4 flex w-fit gap-4 p-3">
       <a href="/listings/{{ $listing->id }}/edit" class="rounded-md bg-red-600 px-4 py-2 font-bold text-white">
         <i class="fa-solid fa-pen-to-square"></i>

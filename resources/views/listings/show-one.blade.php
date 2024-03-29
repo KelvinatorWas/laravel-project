@@ -31,18 +31,17 @@
               {{ $listing->description }}
             </p>
 
-            <div class="flex flex-col items-center">
-              <a href="{{ $listing->email }}"
-                class="mb-4 mt-6 block w-2/3 rounded-xl bg-red-600 py-2 text-white hover:opacity-80">
+            <div class="flex flex-col gap-2 items-stretch md:w-1/5">
+              <x-button.secondary href="{{ $listing->email }}" size="sm">
                 <i class="fa-solid fa-globe"></i>
                 Contact Employer
-              </a>
+              </x-button.secondary>
 
-              <a href="{{ $listing->website }}" target="_blank"
-                class="block w-2/3 rounded-xl bg-black py-2 text-white hover:opacity-80">
+              <x-button.primary href="{{ $listing->webiste }}" size="sm" class="">
                 <i class="fa-solid fa-envelope"></i>
                 Visit Website
-              </a>
+              </x-button.primary>
+
             </div>
           </div>
         </div>
@@ -50,7 +49,6 @@
   </div>
   </x-card>
 
-  {{-- @if () --}}
   @if (isValidUser($listing))
     <x-card class="m-4 flex w-fit gap-4 p-3">
       <a href="/listings/{{ $listing->id }}/edit" class="rounded-md bg-red-600 px-4 py-2 font-bold text-white">

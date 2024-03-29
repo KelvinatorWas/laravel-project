@@ -97,13 +97,8 @@
         @enderror
       </div>
 
-      <div class="mb-6">
-        <button class="rounded bg-red-600 px-4 py-2 text-white hover:bg-black">
-          Create
-        </button>
+      <x-save-cancel-buttons labelLeft="Create" labelRight="Back"/>
 
-        <a href="/" class="ml-4 text-black"> Back </a>
-      </div>
     </form>
   </x-card>
 </x-layout>

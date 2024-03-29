@@ -12,9 +12,7 @@
     />
     
     <div class="absolute right-2 top-2">
-      <button type="submit" class="h-10 w-20 rounded-lg bg-red-600 text-white hover:bg-red-500">
-        Search
-      </button>
+      <x-button.secondary type="submit" size="sm" class="">Search</x-button.secondary>
     </div>
   </div>
 </form>

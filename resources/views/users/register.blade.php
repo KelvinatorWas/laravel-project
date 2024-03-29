@@ -61,10 +61,10 @@
       </div>
       
       <div class="self-center">
-        <button class="text-white font-bold bg-gray-900 py-2 px-6 rounded-md hover:opacity-80">Sign Up</button>
+        <x-button.primary type="submit" size="sm" class="">Sign Up</x-button.primary>
       </div>
 
-      <a class="self-center mt-5 text-red-600 text-sm underline" href="/login">Already have an account?</a>
+      <a class="self-center mt-5 text-red-600 text-sm underline text-shadow" href="/login">Already have an account?</a>
 
     </form>
   </x-card>

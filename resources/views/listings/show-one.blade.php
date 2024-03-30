@@ -17,7 +17,7 @@
           {{ $listing->company }}
         </div>
 
-        <x-job-tags :tags="$listing->tags" />
+        <x-job-tags class="md:grid-cols-2" :tags="$listing->tags" />
 
         <div class="my-4 w-full border-b-4 border-gray-200 pb-4 text-lg"><i
             class="fa-sharp fa-solid fa-location-dot"></i>
@@ -26,7 +26,7 @@
           <h3 class="mb-4 text-3xl font-bold">
             Job Description
           </h3>
-          <div class="flex flex-col space-y-6 text-lg">
+          <div class="flex flex-col space-y-6 text-lg md:items-center">
             <p>
               {{ $listing->description }}
             </p>

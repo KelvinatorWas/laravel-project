@@ -1,9 +1,10 @@
 @props(['tags'])
 
-<ul class="flex flex-col gap-2 sm:flex-row md:gap-0">
+<ul
+  {{$attributes->merge(['class' => "self-center grid grid-cols-2 gap-2 w-fit md:grid-cols-4" ])}}>
   @foreach (explode(', ', $tags) as $tag)
-    <li class="mr-2 flex items-center justify-center rounded-xl bg-black px-4 py-1 text-sm text-white">
-      <a href="/?tag={{ $tag }}">{{ $tag }}</a>
-    </li>
+    <a href="/?tag={{ $tag }}" class="uppercase mr-2 flex items-center justify-center rounded-md bg-primary px-4 py-1 text-xs font-bold text-white transition-all hover:bg-primary-lighter hover:text-red-600 hover:rounded-tl-sm hover:rounded-br-sm">
+      {{ $tag }}
+    </a>
   @endforeach
 </ul>

@@ -25,15 +25,20 @@
           Hello {{auth()->user()->name}}!
         </p>
 
+        <a href="/listings/create" class="px-4 py-2 bg-gray-900 rounded-md text-white font-bold hover:text-red-600 hover:bg-gray-800">
+          <i class="fa-solid fa-file hidden md:inline"></i>
+          Post Job
+        </a>
+
         <a href="/listings/manage" class="px-4 py-2 bg-gray-900 rounded-md text-white font-bold hover:text-red-600 hover:bg-gray-800">
-          <i class="fa-solid fa-gear x-rotate"></i>
+          <i class="fa-solid fa-gear x-rotate hidden md:inline"></i>
           Manage Listings
         </a>
 
         <form method="POST" action="/logout">
           @csrf
           <button class="bg-gray-900 py-2 px-4 rounded-md transition-all hover:text-red-600 hover:bg-gray-800"">
-            <i class="fa-solid fa-user-minus mr-1"></i>
+            <i class="fa-solid fa-user-minus mr-1 hidden md:inline"></i>
             Logout
           </button>
         </form>
@@ -60,10 +65,9 @@
   </main>
 
   <footer
-    class="bg-gray-900 absolute mt-24 flex h-24 w-full items-center justify-start font-bold text-white md:justify-center">
+    class="bg-gray-900 absolute mt-24 flex h-24 w-full items-center font-bold text-white justify-center">
     <p class="ml-2">Copyright &copy; 2024, All Rights reserved</p>
 
-    <a href="/listings/create" class="absolute right-10 top-1/3 bg-black px-5 py-2 text-white">Post Job</a>
   </footer>
 </body>
 

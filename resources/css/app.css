@@ -20,3 +20,10 @@
   animation-duration: 2s;
   animation-iteration-count: infinite;
 }
+
+.inner-blur {
+  background-color: rgba(20, 20, 20, .2);
+  backdrop-filter: blur(20px);
+  border-top: 2px solid red;
+  border-bottom: 2px solid red;
+}

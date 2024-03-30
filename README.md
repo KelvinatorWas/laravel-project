@@ -30,10 +30,19 @@ npm install
 composer install
 ```
 
+#### Create a new environment file ``.env``:
+For just testing you can copy the data from the ``.env.example`` and when you run the application it will say to ``generate api key`` and press ``yes``.
+
+
 Run the application:
 
 ```bash
 php artisan serve
+```
+
+Also run:
+```bash
+npm run dev
 ```
 
 Init database data and seed it:
@@ -42,17 +51,12 @@ Init database data and seed it:
 php artisan migrate --seed
 ```
 
-To have styling of tailwindcss you might have also run:
-
-```bash
-npm run dev
-```
 
 Access the application in your browser at http://127.0.0.1:8000.
 
 ## Login as database seeder user
 
-Email: walterwhite@gmail.com
-Password: walterhwhite
+#### Email: ``walterwhite@gmail.com``
+#### Password: ``walterhwhite``
 
 

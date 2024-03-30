@@ -25,7 +25,12 @@ Install dependencies:
 ```bash
 npm install
 ```
-Run the application / install dependencies:
+
+```bash
+composer install
+```
+
+Run the application:
 
 ```bash
 php artisan serve
